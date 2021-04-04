@@ -114,6 +114,12 @@ extension CurrencyUITextFieldDelegate: UITextFieldDelegate {
         
         return false
     }
+    
+    public func textFieldDidChangeSelection(_ textField: UITextField) {
+        if #available(iOS 13.0, *) {
+            passthroughDelegate?.textFieldDidChangeSelection?(textField)
+        }
+    }
 }
 
 // MARK: - Private
